@@ -27,7 +27,7 @@ def decode(digits, base):
     result = 0
 
     for digit in digits[::-1]:
-        digit = int(digit, base)
+        digit = int(digit, base) # convert any HEX digits to number value
         result += int(digit)*(base**power)
         power += 1
     
@@ -73,10 +73,6 @@ def convert(digits, base1, base2):
 
 
 def main():
-    print(decode("101", 2))
-    print(decode("F", 16))
-
-
     """Read command-line arguments and convert given digits between bases."""
     import sys
     args = sys.argv[1:]  # Ignore script file name
