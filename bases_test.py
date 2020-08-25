@@ -83,39 +83,39 @@ class BasesDecodeTest(unittest.TestCase):
         assert decode('101101', 36) == 60514129
 
 
-# class BasesEncodeTest(unittest.TestCase):
+class BasesEncodeTest(unittest.TestCase):
 
-#     def test_encode_binary(self):
-#         # assert encode(0, 2) == '0'  # Should '' be valid?
-#         assert encode(1, 2) == '1'
-#         assert encode(2, 2) == '10'
-#         assert encode(3, 2) == '11'
-#         assert encode(4, 2) == '100'
-#         assert encode(5, 2) == '101'
-#         assert encode(6, 2) == '110'
-#         assert encode(7, 2) == '111'
-#         assert encode(8, 2) == '1000'
-#         assert encode(9, 2) == '1001'
-#         assert encode(10, 2) == '1010'
-#         assert encode(11, 2) == '1011'
-#         assert encode(12, 2) == '1100'
-#         assert encode(13, 2) == '1101'
-#         assert encode(14, 2) == '1110'
-#         assert encode(15, 2) == '1111'
+    def test_encode_binary(self):
+        # assert encode(0, 2) == '0'  # Should '' be valid?
+        assert encode(1, 2) == '1'
+        assert encode(2, 2) == '10'
+        assert encode(3, 2) == '11'
+        assert encode(4, 2) == '100'
+        assert encode(5, 2) == '101'
+        assert encode(6, 2) == '110'
+        assert encode(7, 2) == '111'
+        assert encode(8, 2) == '1000'
+        assert encode(9, 2) == '1001'
+        assert encode(10, 2) == '1010'
+        assert encode(11, 2) == '1011'
+        assert encode(12, 2) == '1100'
+        assert encode(13, 2) == '1101'
+        assert encode(14, 2) == '1110'
+        assert encode(15, 2) == '1111'
 
-#     def test_encode_decimal(self):
-#         # assert encode(0, 10) == '0'  # Should '' be valid?
-#         assert encode(5, 10) == '5'
-#         assert encode(10, 10) == '10'
-#         assert encode(25, 10) == '25'
-#         assert encode(64, 10) == '64'
-#         assert encode(99, 10) == '99'
-#         assert encode(123, 10) == '123'
-#         assert encode(789, 10) == '789'
-#         assert encode(2345, 10) == '2345'
-#         assert encode(6789, 10) == '6789'
-#         assert encode(13579, 10) == '13579'
-#         assert encode(24680, 10) == '24680'
+    def test_encode_decimal(self):
+        # assert encode(0, 10) == '0'  # Should '' be valid?
+        assert encode(5, 10) == '5'
+        assert encode(10, 10) == '10'
+        assert encode(25, 10) == '25'
+        assert encode(64, 10) == '64'
+        assert encode(99, 10) == '99'
+        assert encode(123, 10) == '123'
+        assert encode(789, 10) == '789'
+        assert encode(2345, 10) == '2345'
+        assert encode(6789, 10) == '6789'
+        assert encode(13579, 10) == '13579'
+        assert encode(24680, 10) == '24680'
 
 #     def test_encode_hexadecimal(self):
 #         assert encode(10, 16) == 'a'
