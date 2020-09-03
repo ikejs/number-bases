@@ -20,6 +20,17 @@ import string
 # get a for loop and get each digit position
 # counter
 
+def encode36(num):
+
+    digit = 9
+
+    if num > digit:
+        return string.ascii_lowercase[num-digit-1]
+    else:
+        return num
+
+
+
 # decode("101", 2) => 5
 def decode(digits, base):
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
@@ -38,27 +49,14 @@ def decode(digits, base):
 
 # encode(5, 2) => 101
 def encode(number, base):
-    """Encode given number in base 10 to digits in given base.
-    number: int -- integer representation of number (in base 10)
-    base: int -- base to convert to
-    return: str -- string representation of number (in given base)"""
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
-    # Handle unsigned numbers only for now
     assert number >= 0, 'number is negative: {}'.format(number)
-   
-    # division loop
-    # get remainders and divisors
-    # save the remainders
-    digits_and_letters = string.digits + string.ascii_letters
-
+ 
     final_digits = ""
 
     while number != 0:
-        remainder = number % base
-        if base == 16:
-            remainder = digits_and_letters[remainder]
-        number = number // base
-        final_digits += str(remainder)
+        number, remainder = divmod(number, base)
+        final_digits += str(encode36(remainder))
     return final_digits[::-1]
 
 
@@ -71,14 +69,10 @@ def convert(digits, base1, base2):
     # Handle up to base 36 [0-9a-z]
     assert 2 <= base1 <= 36, 'base1 is out of range: {}'.format(base1)
     assert 2 <= base2 <= 36, 'base2 is out of range: {}'.format(base2)
-    # TODO: Convert digits from base 2 to base 16 (and vice versa)
-    # ...
-    # TODO: Convert digits from base 2 to base 10 (and vice versa)
-    # ...
-    # TODO: Convert digits from base 10 to base 16 (and vice versa)
-    # ...
-    # TODO: Convert digits from any base to any base (2 up to 36)
-    # ...
+
+    base10Result = decode(digits, base1)
+    finalResult = encode(base10Result, base2)
+    return finalResult
 
 
 def main():
